@@ -1,2 +1,5 @@
 .DS_Store
 netlify.toml
+
+# Local Netlify folder
+.netlify

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScopeShield — Catch scope creep before it costs you</title>
+    <meta
+      name="description"
+      content="AI-assisted proposal and SOW red-flag checker for freelancers, consultants, and small agencies."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#hero" aria-label="ScopeShield home">
+          <span class="brand-mark">S</span>
+          <span>ScopeShield</span>
+        </a>
+        <nav class="topnav">
+          <a href="#how-it-works">How it works</a>
+          <a href="#workspace">Product</a>
+          <a href="#templates">Templates</a>
+          <a href="#pricing">Pricing</a>
+        </nav>
+        <button class="ghost-button" data-scroll="#workspace">Open prototype</button>
+      </header>
+
+      <main>
+        <section class="hero" id="hero">
+          <div class="hero-copy">
+            <div class="eyebrow">Proposal QA for independent client work</div>
+            <h1>Catch scope creep before it lands in your inbox as “just one quick revision.”</h1>
+            <p class="hero-text">
+              ScopeShield reviews proposals and SOWs for ambiguous wording, unpaid revision risk,
+              weak payment language, and vague deliverables — then suggests cleaner client-safe
+              rewrites in seconds.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-button" data-scroll="#workspace">Analyze a sample proposal</button>
+              <button class="secondary-button" data-scroll="#pricing">See pricing posture</button>
+            </div>
+            <div class="hero-proof">
+              <div>
+                <strong>Margin protection</strong>
+                <span>Flags clauses that quietly expand delivery.</span>
+              </div>
+              <div>
+                <strong>Faster sign-off</strong>
+                <span>Turns vague language into clear expectations.</span>
+              </div>
+              <div>
+                <strong>Client-safe tone</strong>
+                <span>Rewrites preserve trust while tightening terms.</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-panel">
+            <div class="hero-card glass-card">
+              <div class="card-kicker">Live analysis preview</div>
+              <div class="score-row">
+                <div>
+                  <div class="score-label">Proposal risk</div>
+                  <div class="score-large">72</div>
+                </div>
+                <div class="score-ring high">
+                  <span>High</span>
+                </div>
+              </div>
+              <ul class="preview-list">
+                <li><span class="pill danger">Flagged</span> “Reasonable revisions included”</li>
+                <li><span class="pill warn">Missing</span> Change request approval process</li>
+                <li><span class="pill neutral">Rewrite</span> Define payment due dates + late fee</li>
+              </ul>
+              <div class="mini-timeline">
+                <div class="timeline-item active">Input</div>
+                <div class="timeline-item active">Risk scan</div>
+                <div class="timeline-item">Export clean version</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="trust-strip" id="how-it-works">
+          <div class="trust-item">
+            <span class="trust-number">01</span>
+            <div>
+              <strong>Paste your proposal</strong>
+              <p>Bring your draft, SOW, or onboarding doc into a focused review space.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">02</span>
+            <div>
+              <strong>See hidden risk</strong>
+              <p>ScopeShield scores ambiguity, missing protections, and risky clauses instantly.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">03</span>
+            <div>
+              <strong>Ship a cleaner draft</strong>
+              <p>Accept suggested rewrites and export a stronger proposal before sending.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="workspace" id="workspace">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Frontend prototype</div>
+              <h2>Proposal analyzer workspace</h2>
+            </div>
+            <p>
+              Built for freelancers, consultants, and small agencies who need a quick last-pass risk
+              review before a proposal goes out the door.
+            </p>
+          </div>
+
+          <div class="workspace-grid">
+            <aside class="sidebar glass-card">
+              <div class="sidebar-block">
+                <div class="card-kicker">Samples</div>
+                <div class="sample-list">
+                  <button class="sample-button active" data-sample="web">Website redesign proposal</button>
+                  <button class="sample-button" data-sample="retainer">Fractional marketing retainer</button>
+                  <button class="sample-button" data-sample="branding">Brand identity package</button>
+                </div>
+              </div>
+              <div class="sidebar-block">
+                <div class="card-kicker">Checks included</div>
+                <ul class="compact-list">
+                  <li>Scope clarity</li>
+                  <li>Payment terms</li>
+                  <li>Revision limits</li>
+                  <li>Approval dependencies</li>
+                  <li>Timeline ambiguity</li>
+                  <li>Change request process</li>
+                </ul>
+              </div>
+            </aside>
+
+            <section class="editor-panel glass-card">
+              <div class="panel-header">
+                <div>
+                  <div class="card-kicker">Input</div>
+                  <h3>Proposal draft</h3>
+                </div>
+                <button class="ghost-button small" id="loadSampleButton">Load sample</button>
+              </div>
+              <label class="input-label" for="proposalInput">Paste proposal or SOW text</label>
+              <textarea id="proposalInput" spellcheck="false"></textarea>
+              <div class="editor-footer">
+                <div class="helper-text">Demo behavior uses seeded analysis plus phrase detection for realism.</div>
+                <button class="primary-button" id="analyzeButton">Analyze proposal</button>
+              </div>
+            </section>
+
+            <section class="results-panel glass-card">
+              <div class="panel-header">
+                <div>
+                  <div class="card-kicker">Output</div>
+                  <h3>Risk dashboard</h3>
+                </div>
+                <div class="analysis-state" id="analysisState">Ready</div>
+              </div>
+
+              <div class="result-topline">
+                <div class="score-card">
+                  <div class="score-label">Risk score</div>
+                  <div class="score-large" id="riskScore">72</div>
+                  <div class="score-caption" id="riskLabel">High risk of scope drift</div>
+                </div>
+                <div class="topline-meta">
+                  <div class="meta-stat">
+                    <span>Flagged phrases</span>
+                    <strong id="flagCount">4</strong>
+                  </div>
+                  <div class="meta-stat">
+                    <span>Missing clauses</span>
+                    <strong id="missingCount">3</strong>
+                  </div>
+                  <div class="meta-stat">
+                    <span>Suggested rewrites</span>
+                    <strong id="rewriteCount">4</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="result-columns">
+                <div>
+                  <div class="subsection-title">Flagged phrases</div>
+                  <div id="flaggedPhrases" class="stack-list"></div>
+                </div>
+                <div>
+                  <div class="subsection-title">Missing protections</div>
+                  <div id="missingClauses" class="stack-list"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="subsection-title">Suggested rewrites</div>
+                <div id="rewrites" class="rewrite-list"></div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="templates" id="templates">
+          <div class="section-heading compact">
+            <div>
+              <div class="eyebrow">Template library + export</div>
+              <h2>Turn analysis into a send-ready proposal</h2>
+            </div>
+            <p>Save time by snapping in pre-vetted clauses and exporting a cleaner draft.</p>
+          </div>
+
+          <div class="template-grid">
+            <article class="template-card glass-card">
+              <div class="template-tag">Most used</div>
+              <h3>Revision boundary clause</h3>
+              <p>Limits rounds, defines what counts as a revision, and pushes extras into change requests.</p>
+              <pre>Includes two structured revision rounds.
+Additional revisions or net-new deliverables require written approval and are billed separately.</pre>
+            </article>
+            <article class="template-card glass-card">
+              <div class="template-tag">Margin saver</div>
+              <h3>Change request clause</h3>
+              <p>Creates a formal approval checkpoint before extra work begins.</p>
+              <pre>Requests outside the approved scope will be documented,
+quoted, and scheduled only after written approval from the client.</pre>
+            </article>
+            <article class="template-card glass-card">
+              <div class="template-tag">Cash flow</div>
+              <h3>Payment protection clause</h3>
+              <p>Clarifies due dates, milestone triggers, and pause rights for overdue invoices.</p>
+              <pre>Invoices are due within 7 calendar days.
+Work may pause on overdue balances until payment is received.</pre>
+            </article>
+          </div>
+
+          <div class="export-strip glass-card">
+            <div>
+              <div class="card-kicker">Export preview</div>
+              <h3>Client-safe delivery package</h3>
+              <p>Generate a clean PDF, shareable summary, or internal risk memo before sending.</p>
+            </div>
+            <div class="export-actions">
+              <button class="secondary-button" id="copySummaryButton">Copy summary</button>
+              <button class="primary-button" id="exportButton">Export clean draft</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="pricing" id="pricing">
+          <div class="section-heading compact">
+            <div>
+              <div class="eyebrow">Monetizable posture</div>
+              <h2>Simple packaging for solo operators</h2>
+            </div>
+            <p>Positioned as an ROI-positive pre-send check, not a heavy legal platform.</p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="pricing-card glass-card">
+              <div class="pricing-tier">Starter</div>
+              <div class="pricing-price">$19<span>/mo</span></div>
+              <ul class="compact-list">
+                <li>10 proposal scans / month</li>
+                <li>Risk score + missing clause detection</li>
+                <li>Clause library access</li>
+              </ul>
+            </article>
+            <article class="pricing-card glass-card featured">
+              <div class="pricing-tier">Professional</div>
+              <div class="pricing-price">$49<span>/mo</span></div>
+              <ul class="compact-list">
+                <li>Unlimited scans</li>
+                <li>Rewrite suggestions</li>
+                <li>Reusable proposal templates</li>
+                <li>Client-facing clean exports</li>
+              </ul>
+            </article>
+            <article class="pricing-card glass-card">
+              <div class="pricing-tier">Agency</div>
+              <div class="pricing-price">$99<span>/mo</span></div>
+              <ul class="compact-list">
+                <li>Team workspace</li>
+                <li>Shared clause playbooks</li>
+                <li>Brand-safe review presets</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
